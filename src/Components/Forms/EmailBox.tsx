@@ -7,12 +7,16 @@ export const EmailBox: React.FC = () => {
 
     const [valid, setValid] = useState(false);
     const [email, setEmail] = useState('');
+    const [success, setEmailSuccess] =  useState(false);
 
     return (
         <div className='justify-center text-center'>
             <form className="max-w-md mt-24">
                 {!valid && email.length > 0 && <p className="text-red-600 text-sm mr-8 mb-2">
                     Please provide a valid email address.
+                </p>}
+                {valid && success && <p className="text-green-600 text-sm mr-8 mb-2">
+                    Email received!
                 </p>}
                 <div className="flex justify-center h-24">
                     <input onChange={(e) => checkEmail(e)} className="border bg-transparent w-full text-white px-2 ml-24 h-10 w-96 leading-tight focus:outline-none mr-4" type="email" placeholder="Email" aria-label="Full name" />
@@ -37,7 +41,11 @@ export const EmailBox: React.FC = () => {
 
     async function submitEmail(e: React.MouseEvent<HTMLButtonElement>) {
         if(valid) {
+            const serverResponse = await axios.post('https://someapilinkhere',{
+                email
+            })
             
+            serverResponse ? setEmailSuccess(true) : setEmailSuccess(false)
         }
     }
 }
