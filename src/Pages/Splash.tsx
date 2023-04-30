@@ -1,4 +1,4 @@
-import { EmailBox } from "../Components/TextBoxes/EmailBox"
+import { EmailBox } from "../Components/Forms/EmailBox"
 
 export const Splash: React.FC = () => {
     return (
