@@ -1,5 +1,6 @@
 //@ts-nocheck
 import validator from 'validator';
+import axios from 'axios'
 
 import { useState } from 'react';
 
@@ -7,7 +8,7 @@ export const EmailBox: React.FC = () => {
 
     const [valid, setValid] = useState(false);
     const [email, setEmail] = useState('');
-    const [success, setEmailSuccess] =  useState(false);
+    const [success, setEmailSuccess] = useState(false);
 
     return (
         <div className='justify-center text-center'>
@@ -30,7 +31,7 @@ export const EmailBox: React.FC = () => {
 
     function checkEmail(e: React.FormEvent<HTMLInputElement>) {
         setEmail(e.target?.value);
-    
+
         if (validator.isEmail(email)) {
             setValid(true);
             return;
@@ -40,11 +41,11 @@ export const EmailBox: React.FC = () => {
     }
 
     async function submitEmail(e: React.MouseEvent<HTMLButtonElement>) {
-        if(valid) {
-            const serverResponse = await axios.post('https://someapilinkhere',{
+        if (valid) {
+            const serverResponse = await axios.post('http://localhost:3000/mailing/add', {
                 email
             })
-            
+
             serverResponse ? setEmailSuccess(true) : setEmailSuccess(false)
         }
     }
