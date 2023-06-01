@@ -5,7 +5,7 @@ export const Splash: React.FC = () => {
         <div className="h-screen bg-[url('assets/spacex-tKs_2sBoqAg-unsplash.jpg')] bg-no-repeat bg-cover bg-center bg-fixed flex justify-center items-center">
             <div>
                 <span className="flex justify-center text-7xl text-white font-serif tracking-widest mt-24">Launch Library</span>
-                <span className="mt-5 flex justify-center text-2xl text-gray-400 font-serif tracking-widest">COMING SOON</span>
+                <span className="mt-5 flex justify-center text-2xl text-gray-400 font-serif tracking-widest animate-pulse">COMING SOON</span>
                 <EmailBox/>
             </div>
         </div>
