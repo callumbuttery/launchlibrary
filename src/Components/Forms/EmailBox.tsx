@@ -12,7 +12,7 @@ export const EmailBox: React.FC = () => {
 
     return (
         <div className='justify-center text-center'>
-            <form className="max-w-md mt-24">
+            <form className="max-w-md mt-10">
                 {!valid && email.length > 0 && <p className="text-blue-300 text-sm mr-8 mb-2">
                     Please provide a valid email address.
                 </p>}
@@ -21,7 +21,7 @@ export const EmailBox: React.FC = () => {
                 </p>}
                 <div className="h-24 ml-24">
                     <input onChange={(e) => checkEmail(e)} className="flex justify-center border bg-transparent w-full text-white px-2 ml-0 h-10 w-64 leading-tight focus:outline-none mr-4" type="email" placeholder="Email" aria-label="Full name" />
-                    <button onClick={(e) => submitEmail(e)} className="h-10 ml-4 mt-2 flex-shrink-0 bg-sky-500 hover:bg-teal-700 border-sky-500 hover:border-sky-400 hover:bg-sky-400 text-sm border-1 text-white py-1 px-2 rounded" type="button">
+                    <button onClick={(e) => submitEmail(e)} className="h-10 ml-4 mt-2 flex-shrink-0 bg-orange-500 hover:bg-orange-300 text-sm border-1 text-white py-1 px-2 rounded" type="button">
                         Get updates!
                     </button>
                 </div>
