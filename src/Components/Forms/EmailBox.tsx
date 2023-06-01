@@ -20,7 +20,7 @@ export const EmailBox: React.FC = () => {
                     Email received!
                 </p>}
                 <div className="h-24">
-                    <input onChange={(e) => checkEmail(e)} className="flex justify-center border bg-black w-full text-white px-2 ml-24 h-10 w-64 leading-tight focus:outline-none mr-4" type="email" placeholder="Email" aria-label="Full name" />
+                    <input onChange={(e) => checkEmail(e)} className="flex justify-center border bg-black w-full text-white px-2 ml-0 h-10 w-64 leading-tight focus:outline-none mr-4" type="email" placeholder="Email" aria-label="Full name" />
                     <button onClick={(e) => submitEmail(e)} className="h-10 ml-4 mt-2 flex-shrink-0 bg-sky-500 hover:bg-teal-700 border-sky-500 hover:border-sky-400 hover:bg-sky-400 text-sm border-1 text-white py-1 px-2 rounded" type="button">
                         Get updates!
                     </button>
